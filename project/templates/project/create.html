@@ -7,8 +7,10 @@
 {% block content %}
     <h1>Создать задачу</h1>
     <form method="post">
-        <input type="text" placeholder="Введите текс" class="form-control"><br>
-        <textarea type="text" placeholder="Введите текс" class="form-control"></textarea><br>
+        {% csrf_token %}
+        {{ form.title }}<br>
+        {{ form.task }}<br>
         <button type="submit" class="btn-success">Добавить</button>
+        <span>{{ error }}</span>
     </form>
 {% endblock %}
